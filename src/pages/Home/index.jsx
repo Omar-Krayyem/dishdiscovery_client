@@ -1,6 +1,8 @@
 import '../Home/style.css';
 import Nav from '../../components/Nav/index';
 import Header from '../../components/Header/index';
+import Footer from '../../components/Footer/index';
+
 const Home = () => {
 
 
@@ -8,7 +10,7 @@ const Home = () => {
     <div className='home'>
       <div className='home_nav'><Nav/></div>
       <div className='header'><Header/></div>
-        Home page
+      <div className='footer'><Footer/></div>
     </div>
   );
 }
