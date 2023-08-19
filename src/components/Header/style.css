@@ -1,0 +1,37 @@
+.Header{
+    height: 300PX;
+    background-image: url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.Header .txt{
+    text-align: center;
+    color: white;
+    background-image: none;
+}
+
+.Header .txt .title{
+    margin-top: 30px;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.Header .txt .subtitle{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.Header .search input{
+    width: 400px;
+    font-size: 16px;
+    padding: 7px 5px;
+    border-radius: 15px;
+    border: 2px solid #FF7070;
+    outline: none;
+}
