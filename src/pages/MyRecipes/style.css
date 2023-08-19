@@ -1,0 +1,49 @@
+.MyRecipes{
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: #F0F0F0;
+}
+
+.MyRecipes .MyRecipes_header{
+    padding: 0 10%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MyRecipes .MyRecipes_header .page_title{
+    color: #FF7070;
+}
+
+.MyRecipes .MyRecipes_header .addRecipe button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #FF7070;
+    color: #F0F0F0;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.MyRecipes .MyRecipes_header .addRecipe button:hover{
+    background-color: #F0F0F0;
+    color: #FF7070;
+    border: 1.5px solid #FF7070;
+    transition: 0.5s;
+}
+
+.MyRecipes .cardContainer{
+    padding: 30px 9%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
