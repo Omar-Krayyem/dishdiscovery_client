@@ -3,4 +3,16 @@
     margin: 0;
     top: 0;
     left: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: #F0F0F0;
+}
+
+.home .cardContainer{
+    padding: 30px 9%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
