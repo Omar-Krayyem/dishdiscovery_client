@@ -23,6 +23,11 @@
     margin-right: 20px;
 }
 
+.text_decoration{
+    text-decoration: none;
+    color: white;
+}
+
 .nav .leftSide .logo:hover{
     color: black ;
     transition: 0.5s;
@@ -32,6 +37,7 @@
 .nav .leftSide .btn{
     margin-left: 20px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav .leftSide .btn:hover{
@@ -45,6 +51,7 @@
     padding: 7px 10px;
     border-radius: 25px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav .rightSide:hover{
