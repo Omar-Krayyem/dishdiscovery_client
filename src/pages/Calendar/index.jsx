@@ -49,12 +49,12 @@ const Calendar = () => {
                         </thead>
                         <tbody>
                             {recipes.map((recipe) => (
-                                <RecipeRow 
+                                    <RecipeRow 
                                     id={recipe.id}
                                     name={recipe.recipe.name}
                                     cuisine={recipe.recipe.cuisine}
                                     date={recipe.date}
-                                />
+                                    />
                             ))}
                         </tbody>
                     </table>

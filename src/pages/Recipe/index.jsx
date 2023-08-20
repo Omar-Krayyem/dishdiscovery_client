@@ -13,7 +13,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Recipe = () => {
-    const recipe_id = localStorage.getItem("recipe_id")  
+    const recipe_id = localStorage.getItem("recipe_id");
     const token = localStorage.getItem("token");
 
     ////////////////////////////////////Open add recipe form

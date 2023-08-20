@@ -1,8 +1,13 @@
+.card_link{
+    width: 100%;
+}
+
 .RecipeRow{
     width: 100%;
 }
 
 .RecipeRow_tr {
+    width: 100%;
     background-color: white;
     font-size: 16px;
     font-weight: 500;
@@ -17,5 +22,5 @@
 }
 
 .RecipeRow_tr:hover{
-    background-color: #d4d2d2;
+    background-color: #f8eded;
 }
