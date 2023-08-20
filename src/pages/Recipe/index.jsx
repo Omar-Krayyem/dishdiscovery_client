@@ -33,7 +33,7 @@ const Recipe = () => {
             }
         })
         .then(response => {
-            console.log(response.data.data);
+            // console.log(response.data.data);
             setName(response.data.data.name);
             setCuisine(response.data.data.cuisine);
             setIngredients(response.data.data.ingredients);
@@ -60,7 +60,7 @@ const Recipe = () => {
             }
         })
         .then(response => {
-            console.log(response.data.data.is_liked);
+            // console.log(response.data.data.is_liked);
             setIsLiked(response.data.data.is_liked);
         })
         .catch(error => {
@@ -91,7 +91,7 @@ const Recipe = () => {
                 }
             })
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 setIsLiked(false);
                 getLikes();
             })
@@ -106,7 +106,7 @@ const Recipe = () => {
                 }
             })
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 setIsLiked(true);
                 getLikes();
             })
@@ -116,16 +116,52 @@ const Recipe = () => {
         }
     }
 
+    ///////////////////////////////////////////////////////////////////////Checked if has this recipe
+    const [hasThis, setHasThis] = useState(false);
+    const getHsaThis = async () => {
+        await axios.get(`http://127.0.0.1:8000/api/recipe/thisRecipe/${recipe_id}`, {
+            "headers": {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            console.log(response.data.data);
+            setHasThis(response.data.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    };
+
+    const deleteRecipe = (event) =>{
+        event.preventDefault();
+
+        axios.delete(`http://127.0.0.1:8000/api/recipe/destroy/${recipe_id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            console.log(response.data);
+            window.location.href = '/MyRecipes';
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
     useEffect(() => {
         getLikes();
         getIsLiked();
         getRecipe();
+        getHsaThis();
     }, []);
 
     return(
 
         <div className='Recipe'>
             <div className='Recipe_nav'><Nav/></div>
+            {hasThis && <div className='delete_section'><button onClick={deleteRecipe}>Delete</button></div>}
             <div className='Recipe_up'>
                 <div className='left_side'>
                     <img src={imageUrl} alt=''></img>

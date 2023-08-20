@@ -114,3 +114,25 @@
 .liked{
     color: #FF7070;
 }
+
+.delete_section{
+    padding: 20px 12.5% 0px;
+    display: flex;
+}
+
+.delete_section button{
+    padding: 10px 20px;
+    background-color: #FF7070;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #F0F0F0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.delete_section button:hover{
+    background-color: red;
+    transition: 0.5s;
+}
