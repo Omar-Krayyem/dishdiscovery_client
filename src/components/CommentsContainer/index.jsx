@@ -6,24 +6,33 @@ import axios from 'axios';
 
 const CommentsContainer = () => {
 
-    const [newComment, setNewComment] = useState('');
-    let [comments , setComments] = useState([]);
-
-    let id = 2;
-    let name = 'omar_krayyem'
-    let text = 'I like this recipe'
-
-    const handleCommentAdd = () => {
-        console.log('Adding comment:', newComment);
-        setNewComment('');
-    };
+    const [text, setText] = useState('');
+    const [comments , setComments] = useState([]);
 
     let recipe_id = 4;
+    const token = localStorage.getItem("token");
+
+    const AddComment = () => {
+        const postData = { text , recipe_id};
+        axios.post('http://127.0.0.1:8000/api/comments/store', postData, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            console.log(response);
+            setText("")
+            // const newComment = response.data.data.text;
+            // setComments(prevComments => [...prevComments, newComment]);
+            window.location.reload();
+        })
+        .catch(error => {
+            console.log(error);
+            setText("")
+        });
+    };
 
     const getComments = async () => {
-
-        const token = localStorage.getItem("token");
-
         await axios.get(`http://127.0.0.1:8000/api/comments/${recipe_id}`, {
             "headers": {
                 'Authorization': `Bearer ${token}`
@@ -47,19 +56,24 @@ const CommentsContainer = () => {
             <div className="CommentsTitle"><h1>Comments</h1></div>
             <div className='Comments'>
                 {comments.map((comment) => (
-                    <Comment id={comment.id} name={comment.text} text={comment.text} first_name={comment.user.first_name} last_name={comment.user.last_name}/>
+                    <Comment
+                    key={comment.id}
+                    id={comment.id}
+                    text={comment.text} 
+                    firstname={comment.user.first_name} 
+                    lastname={comment.user.last_name}/>
                 ))}
             </div>
             <div className="addComment">
                 <input 
                     type='text'
                     placeholder='Add your comment...'
-                    value={newComment}
-                    onChange={(e) => setNewComment(e.target.value)}
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
                 ></input>
                 <SendRoundedIcon
                 className="sendIcon"
-                onClick={handleCommentAdd}
+                onClick={AddComment}
                 />
             </div>
         </div>
