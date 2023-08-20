@@ -12,10 +12,7 @@ const CommentsContainer = () => {
     let text = 'I like this recipe'
 
     const handleCommentAdd = () => {
-        // Do something with the newComment (e.g., send it to the server)
         console.log('Adding comment:', newComment);
-
-        // Reset the input
         setNewComment('');
     };
 

@@ -1,0 +1,85 @@
+.AddCalendar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: #00000079;
+    z-index: 1;
+  }
+
+.AddCalendar_container{
+    width: 600px;
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F0F0;
+    border-radius: 25px;
+    justify-items: center;
+    justify-content: center;
+
+}
+
+.AddCalendar_container .title{
+    color: #FF7070;
+    display: flex;
+    justify-content: center;
+}
+  
+.CalendarForm{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    padding: 0px 50px 0px 50px;
+}
+
+.CalendarForm .text_feild .CalendarLabel, .CalendarForm .Date .CalendarLabel{
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF7070;
+    margin-bottom: -20px;
+}
+
+.CalendarForm .Date{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.CalendarForm .text_feild > input{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #FF7070;
+    color: black;
+    outline: none;
+    background: none;
+    padding-bottom: 7px;
+    resize: none;
+    max-height: 150px;
+}
+
+.CalendarForm .CalendarAddbtn, .CalendarForm .CalendarCloebtn{
+    margin-top: 10px;
+    color: #FF7070;
+    border: 1px solid #FF7070;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.CalendarForm .CalendarAddbtn:hover, .CalendarForm .CalendarCloebtn:hover{
+    color: #F0F0F0;
+    background-color: #FF7070;
+    border: 1px solid #FF7070;
+    transition: 0.5s;
+}

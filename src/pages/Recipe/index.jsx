@@ -8,9 +8,17 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import CommentsContainer from '../../components/CommentsContainer/index';
-
+import AddCalendar from '../../components/AddCalendar/index';
+import React, { useState } from 'react';
 
 const Recipe = () => {
+    let name = 'tabouleh';
+    const [isPopupVisible, setPopupVisibility] = useState(false);
+
+    const handleAddButtonClick = () => {
+        setPopupVisibility(true);
+    }
+
     return(
 
         <div className='Recipe'>
@@ -32,7 +40,10 @@ const Recipe = () => {
                     
                 </div>
                 <div className="right_side">
-                    <div className='Recipe_Cuisine'><h2>Cuisine: Lebanese</h2></div>
+                    <div className='Recipe_Cuisine'>
+                        <h2>Cuisine: Lebanese</h2>
+                        <button onClick={handleAddButtonClick}>Add to Calendar</button>
+                    </div>
                     <div className='Recipe_Ingredients'>
                         <h2>Ingredients</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia eaque perferendis dolores aperiam, nemo eligendi? Assumenda laboriosam reiciendis debitis veritatis accusantium, dicta totam quae id laborum tempora iste pariatur blanditiis quibusdam modi possimus provident minima porro qui nesciunt atque consectetur neque. Molestias, suscipit tempora facere veritatis eos eveniet incidunt facilis accusantium accusamus, delectus quae id nesciunt impedit reiciendis officiis sit labore? Perspiciatis aut alias iusto perferendis fugiat corrupti consequatur cum saepe facere unde, deserunt labore dolore voluptates repudiandae aliquid esse tempore inventore ea. Nesciunt, odio quod, quos dolores praesentium ad odit similique doloremque eos, voluptatibus enim corrupti nemo asperiores rem.</p> 
@@ -43,6 +54,7 @@ const Recipe = () => {
             <div className="Recipe_down">
                 <CommentsContainer/>
             </div>
+            {isPopupVisible && <AddCalendar name={name} onClose={() => setPopupVisibility(false)} />}
             <div className='Recipe_bottom'><div className='footer'><Footer/></div></div>
         </div>
     );
