@@ -6,7 +6,7 @@ const AddCalendar = ({ onClose, name }) =>{
 
     const [date, setDate] = useState('');
 
-    let recipe_id = 1;
+    const recipe_id = localStorage.getItem("recipe_id")
     const token = localStorage.getItem("token");
 
     console.log(date);

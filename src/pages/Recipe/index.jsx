@@ -13,15 +13,45 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Recipe = () => {
-    let name = 'tabouleh';
-    let ingredients = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia eaque perferendis dolores aperiam, nemo eligendi? Assumenda laboriosam reiciendis debitis veritatis accusantium, dicta totam quae id laborum tempora iste pariatur blanditiis quibusdam modi possimus provident minima porro qui nesciunt atque consectetur neque. Molestias, suscipit tempora facere veritatis eos eveniet incidunt facilis accusantium accusamus, delectus quae id nesciunt impedit reiciendis officiis sit labore? Perspiciatis aut alias iusto perferendis fugiat corrupti consequatur cum saepe facere unde, deserunt labore dolore voluptates repudiandae aliquid esse tempore inventore ea. Nesciunt, odio quod, quos dolores praesentium ad odit similique doloremque eos, voluptatibus enim corrupti nemo asperiores rem.';
-    
+    const recipe_id = localStorage.getItem("recipe_id")  
+    const token = localStorage.getItem("token");
+
+    ////////////////////////////////////Open add recipe form
     const [isPopupVisible, setPopupVisibility] = useState(false);
+
+
+    ////////////////////////////////////get Recipe
+    const [name, setName] = useState('trysetName')
+    const [cuisine, setCuisine] = useState('trysetCuisine')
+    const [ingredients, setIngredients] = useState('trysetIngredients')
+    const [imageUrl, setImageUrl] = useState('')
+
+    const getRecipe = async () => {
+        await axios.get(`http://127.0.0.1:8000/api/recipe/${recipe_id}`, {
+            "headers": {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            console.log(response.data.data);
+            setName(response.data.data.name);
+            setCuisine(response.data.data.cuisine);
+            setIngredients(response.data.data.ingredients);
+            setImageUrl(response.data.data.new_image_url);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    };
+
+    ///////////////////////////////////////////////Like
+
     const [like, setLike] = useState('0');
     const [isLiked, setIsLiked] = useState(false);
 
-    let recipe_id = 1;
-    const token = localStorage.getItem("token");
+    const handleAddButtonClick = () => {
+        setPopupVisibility(true);
+    }
 
     const getIsLiked = async () => {
         await axios.get(`http://127.0.0.1:8000/api/like/${recipe_id}`, {
@@ -52,15 +82,6 @@ const Recipe = () => {
           console.log(error);
         });
     };
-    
-    useEffect(() => {
-        getLikes();
-        getIsLiked();
-    }, []);
-
-    const handleAddButtonClick = () => {
-        setPopupVisibility(true);
-    }
 
     const handleLikeBtn = () => {
         if (isLiked) {
@@ -95,15 +116,21 @@ const Recipe = () => {
         }
     }
 
+    useEffect(() => {
+        getLikes();
+        getIsLiked();
+        getRecipe();
+    }, []);
+
     return(
 
         <div className='Recipe'>
             <div className='Recipe_nav'><Nav/></div>
             <div className='Recipe_up'>
                 <div className='left_side'>
-                    <img src='https://feelgoodfoodie.net/wp-content/uploads/2023/04/Lebanese-Tabbouleh-Salad-09.jpg' alt=''></img>
+                    <img src={imageUrl} alt=''></img>
                     <div className='title'>
-                        <h1>Tabouleh</h1>
+                        <h1>{name}</h1>
                         <div  className={`likes ${isLiked ? 'liked' : ''}`}>{like}<FavoriteIcon className={`icon ${isLiked?'liked':''}`} onClick={handleLikeBtn}/></div>
                     </div>
                     <div className='social_media'>
@@ -117,7 +144,7 @@ const Recipe = () => {
                 </div>
                 <div className="right_side">
                     <div className='Recipe_Cuisine'>
-                        <h2>Cuisine: Lebanese</h2>
+                        <h2>Cuisine: {cuisine}</h2>
                         <button onClick={handleAddButtonClick}>Add to Calendar</button>
                     </div>
                     <div className='Recipe_Ingredients'>

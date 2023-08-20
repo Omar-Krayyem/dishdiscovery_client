@@ -9,7 +9,7 @@ const CommentsContainer = () => {
     const [text, setText] = useState('');
     const [comments , setComments] = useState([]);
 
-    let recipe_id = 4;
+    const recipe_id = localStorage.getItem("recipe_id")
     const token = localStorage.getItem("token");
 
     const AddComment = () => {
