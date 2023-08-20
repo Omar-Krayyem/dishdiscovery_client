@@ -2,13 +2,34 @@ import '../Calendar/style.css';
 import Nav from '../../components/Nav/index';
 import Footer from '../../components/Footer/index';
 import RecipeRow from '../../components/RecipeRow/index';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Calendar = () => {
 
-    let id = 1;
-    let name = 'Tabouleh';
-    let cuisine = 'Lebanese';
-    let date = '2023-8-23'
+    let [recipes , setRecipes] = useState([]);
+
+    const getItems = async () => {
+
+        const token = localStorage.getItem("token");
+
+        await axios.get(`http://127.0.0.1:8000/api/calendar`, {
+            "headers": {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            console.log(response.data.data);
+            setRecipes(response.data.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    };
+    
+    useEffect(() => {
+        getItems();
+    }, []);
     return(
         <div className='Calendar'>
             <div className="Calendar_top">
@@ -27,10 +48,9 @@ const Calendar = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <RecipeRow id={id} name={name} cuisine={cuisine} date={date}/>
-                            <RecipeRow id={id} name={name} cuisine={cuisine} date={date}/>
-                            <RecipeRow id={id} name={name} cuisine={cuisine} date={date}/>
-                            <RecipeRow id={id} name={name} cuisine={cuisine} date={date}/>
+                            {recipes.map((recipe) => (
+                                <RecipeRow id={recipe.id} name={recipe.recipe.name} cuisine={recipe.recipe.cuisine} date={recipe.date}/>
+                            ))}
                         </tbody>
                     </table>
                 </div>
