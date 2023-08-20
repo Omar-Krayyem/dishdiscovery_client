@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/index';
 import Card from '../../components/Card/index';
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+
 const Home = () => {
 
   let [cards, setCards] = useState([]);
