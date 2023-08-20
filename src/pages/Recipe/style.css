@@ -110,3 +110,7 @@
     padding: 30px 12.5%;
     display: flex;
 }
+
+.liked{
+    color: #FF7070;
+}
