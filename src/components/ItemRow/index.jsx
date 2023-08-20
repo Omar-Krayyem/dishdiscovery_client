@@ -27,7 +27,7 @@ const ItemRow = (props) => {
         <tr className='ItemRow_tr' id={props.id}>
             <td className='ItemRow_td'>{props.name}</td>
             <td className='ItemRow_td'>{props.quantity}</td>
-            <td className='ItemRow_td' onClick={deleteItem}><CheckIcon/> <DeleteIcon/> </td>
+            <td className='ItemRow_td' ><CheckIcon onClick={deleteItem}/> <DeleteIcon onClick={deleteItem}/> </td>
         </tr>
     );
 }
