@@ -15,7 +15,7 @@ const ShoppingList = () => {
         setPopupVisibility(true);
     }
 
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
 
     const getItems = async () => {
         await axios.get(`http://127.0.0.1:8000/api/list`, {
