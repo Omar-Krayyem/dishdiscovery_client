@@ -3,14 +3,24 @@ import Nav from '../../components/Nav/index';
 import Footer from '../../components/Footer/index';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckIcon from '@mui/icons-material/Check';
+import AddItem from '../../components/AddItem/index'
+import React, { useState } from 'react';
+
 const ShoppingList = () => {
+
+    const [isPopupVisible, setPopupVisibility] = useState(false);
+
+    const handleAddButtonClick = () => {
+        setPopupVisibility(true);
+    }
+
     return(
         <div className='ShoppingList'>
             <div className="ShoppingList_top">
                 <div className='ShoppingList_nav'><Nav/></div>
                 <div className='ShoppingList_header'>
                     <div className='page_title'><h1>Shopping List</h1></div>
-                    <div className="addlistitem"><button>Add New Item</button></div>
+                    <div className="addlistitem"><button onClick={handleAddButtonClick}>Add New Item</button></div>
                 </div>
                 <div className='shoppingList_body'>
                     <table className='shoppingList_table'>
@@ -43,6 +53,7 @@ const ShoppingList = () => {
                     </table>
                 </div>
             </div>
+            {isPopupVisible && <AddItem onClose={() => setPopupVisibility(false)} />}
             <div className='ShoppingList_bottom'><div className='footer'><Footer/></div></div>
         </div>
     );
