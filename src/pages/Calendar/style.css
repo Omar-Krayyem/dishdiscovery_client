@@ -1,0 +1,74 @@
+.Calendar{
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background-color: #F0F0F0;
+    min-height: 955px;
+}
+
+.Calendar .Calendar_header{
+    padding: 0 10%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Calendar .Calendar_header .page_title{
+    color: #FF7070;
+}
+
+.Calendar .Calendar_body{
+    padding: 0 10% ;
+
+}
+/*---------------------------------------------------------------------------------------------------------------- table */
+.Calendar_table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.Calendar_table .Calendar_thead {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 20px;
+    color: #F0F0F0;
+    background-color: #FF7070;
+    cursor: pointer;
+}
+  
+.Calendar_table .Calendar_th, .Calendar_table .Calendar_td {
+    width: 25%;
+    padding: 10px 20px;
+    text-align: center;
+}
+  
+.Calendar_table .Calendar_tr {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5B5B5B;
+    cursor: pointer;
+}
+
+.top_left{
+    border-top-left-radius: 15px;
+}
+
+.top_right{
+    border-top-right-radius: 15px;
+}
+
+.footer{
+    margin-top: 50px;
+    bottom: 0;
+}

@@ -1,0 +1,21 @@
+.RecipeRow{
+    width: 100%;
+}
+
+.RecipeRow_tr {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5B5B5B;
+    cursor: pointer;
+}
+
+.RecipeRow_td {
+    width: 25%;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.RecipeRow_tr:hover{
+    background-color: #d4d2d2;
+}
