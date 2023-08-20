@@ -62,6 +62,39 @@ const Recipe = () => {
         setPopupVisibility(true);
     }
 
+    const handleLikeBtn = () => {
+        if (isLiked) {
+            axios.delete(`http://127.0.0.1:8000/api/like/destroy/${recipe_id}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                console.log(response.data)
+                setIsLiked(false);
+                getLikes();
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        } else {
+            const postData = { recipe_id};
+            axios.post(`http://127.0.0.1:8000/api/like/store`, postData, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                console.log(response.data)
+                setIsLiked(true);
+                getLikes();
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }
+
     return(
 
         <div className='Recipe'>
@@ -71,7 +104,7 @@ const Recipe = () => {
                     <img src='https://feelgoodfoodie.net/wp-content/uploads/2023/04/Lebanese-Tabbouleh-Salad-09.jpg' alt=''></img>
                     <div className='title'>
                         <h1>Tabouleh</h1>
-                        <div  className={`likes ${isLiked ? 'liked' : ''}`}>{like}<FavoriteIcon className={`icon ${isLiked ? 'liked' : ''}`}/></div>
+                        <div  className={`likes ${isLiked ? 'liked' : ''}`}>{like}<FavoriteIcon className={`icon ${isLiked?'liked':''}`} onClick={handleLikeBtn}/></div>
                     </div>
                     <div className='social_media'>
                         <InstagramIcon className='icon'/>
