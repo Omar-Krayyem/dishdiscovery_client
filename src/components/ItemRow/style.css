@@ -1,0 +1,17 @@
+.ItemRow{
+    width: 100%;
+}
+
+.ItemRow_tr {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5B5B5B;
+    cursor: pointer;
+}
+
+.ItemRow_td {
+    width: 33.3%;
+    padding: 10px 20px;
+    text-align: center;
+}

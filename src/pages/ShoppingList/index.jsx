@@ -1,9 +1,8 @@
 import '../ShoppingList/style.css';
 import Nav from '../../components/Nav/index';
 import Footer from '../../components/Footer/index';
-import DeleteIcon from '@mui/icons-material/Delete';
-import CheckIcon from '@mui/icons-material/Check';
-import AddItem from '../../components/AddItem/index'
+import AddItem from '../../components/AddItem/index';
+import ItemRow from '../../components/ItemRow/index';
 import React, { useState } from 'react';
 
 const ShoppingList = () => {
@@ -13,6 +12,9 @@ const ShoppingList = () => {
     const handleAddButtonClick = () => {
         setPopupVisibility(true);
     }
+    let id =1;
+    let name = 'tomato';
+    let quantity = 3;
 
     return(
         <div className='ShoppingList'>
@@ -32,23 +34,13 @@ const ShoppingList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className='shoppingList_tr'>
-                                <td className='shoppingList_td'>Cucumber</td>
-                                <td className='shoppingList_td'>1</td>
-                                <td className='shoppingList_td'><CheckIcon/> <DeleteIcon/> </td>
-                            </tr>
-                            <tr className='shoppingList_tr'>
-                                <td className='shoppingList_td'>Cucumber</td>
-                                <td className='shoppingList_td'>1</td>
-                                <td className='shoppingList_td'><CheckIcon/> <DeleteIcon/></td>
-                            </tr>
-                            <tr className='shoppingList_tr'>
-                                <td className='shoppingList_td'>Cucumber</td>
-                                <td className='shoppingList_td'>1</td>
-                                <td className='shoppingList_td'><CheckIcon/> <DeleteIcon/></td>
-                            </tr>
-                            
-                            
+                            <ItemRow id={id} name={name} quantity={quantity}/>
+                            <ItemRow id={id} name={name} quantity={quantity}/>
+                            <ItemRow id={id} name={name} quantity={quantity}/>
+                            <ItemRow id={id} name={name} quantity={quantity}/>
+                            <ItemRow id={id} name={name} quantity={quantity}/>
+                            <ItemRow id={id} name={name} quantity={quantity}/>
+                            <ItemRow id={id} name={name} quantity={quantity}/>
                         </tbody>
                     </table>
                 </div>

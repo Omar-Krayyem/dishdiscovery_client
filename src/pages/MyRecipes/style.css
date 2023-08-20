@@ -41,7 +41,7 @@
 }
 
 .MyRecipes .cardContainer{
-    padding: 30px 9%;
+    padding: 0px 9%;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
