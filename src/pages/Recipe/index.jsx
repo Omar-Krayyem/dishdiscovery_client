@@ -7,6 +7,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import CommentsContainer from '../../components/CommentsContainer/index';
+
 
 const Recipe = () => {
     return(
@@ -39,7 +41,7 @@ const Recipe = () => {
                 </div>
             </div>
             <div className="Recipe_down">
-
+                <CommentsContainer/>
             </div>
             <div className='Recipe_bottom'><div className='footer'><Footer/></div></div>
         </div>
