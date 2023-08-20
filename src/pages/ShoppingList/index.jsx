@@ -3,18 +3,38 @@ import Nav from '../../components/Nav/index';
 import Footer from '../../components/Footer/index';
 import AddItem from '../../components/AddItem/index';
 import ItemRow from '../../components/ItemRow/index';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const ShoppingList = () => {
 
+    let [items , setItems] = useState([]);
     const [isPopupVisible, setPopupVisibility] = useState(false);
 
     const handleAddButtonClick = () => {
         setPopupVisibility(true);
     }
-    let id =1;
-    let name = 'tomato';
-    let quantity = 3;
+
+    const token = localStorage.getItem("token")
+
+    const getItems = async () => {
+        await axios.get(`http://127.0.0.1:8000/api/list`, {
+            "headers": {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            console.log(response.data.data);
+            setItems(response.data.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    };
+    
+    useEffect(() => {
+        getItems();
+    }, []);
 
     return(
         <div className='ShoppingList'>
@@ -34,13 +54,9 @@ const ShoppingList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <ItemRow id={id} name={name} quantity={quantity}/>
-                            <ItemRow id={id} name={name} quantity={quantity}/>
-                            <ItemRow id={id} name={name} quantity={quantity}/>
-                            <ItemRow id={id} name={name} quantity={quantity}/>
-                            <ItemRow id={id} name={name} quantity={quantity}/>
-                            <ItemRow id={id} name={name} quantity={quantity}/>
-                            <ItemRow id={id} name={name} quantity={quantity}/>
+                            {items.map((item) => (
+                                <ItemRow id={item.id} name={item.name} quantity={item.quantity}/>
+                            ))}
                         </tbody>
                     </table>
                 </div>

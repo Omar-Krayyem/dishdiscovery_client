@@ -2,6 +2,12 @@ import '../Nav/style.css';
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
+    
+    function Logout (){
+        localStorage.removeItem("token");
+        window.location.href = '/';
+    }
+
     return(
         <div className='nav'>
             <div className='leftSide'>
@@ -11,7 +17,7 @@ const Nav = () => {
                 <NavLink className={'text_decoration'} to={'/Calendar'}><div className="btn">Calendar</div></NavLink>
             </div>
             <div className='rightSide'>
-                <div className="btn">Logout</div>
+                <div className="btn" onClick={Logout}>Logout</div>
             </div>
         </div>
     );
