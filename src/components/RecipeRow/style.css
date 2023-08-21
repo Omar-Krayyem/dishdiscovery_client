@@ -1,5 +1,8 @@
-.card_link{
-    width: 100%;
+.calendar_link{
+    font-size: 16px;
+    font-weight: 600;
+    color: #5B5B5B;
+    /* text-decoration: none; */
 }
 
 .RecipeRow{

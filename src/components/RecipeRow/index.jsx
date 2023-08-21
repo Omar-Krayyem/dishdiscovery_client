@@ -4,8 +4,8 @@ import axios from 'axios';
 import {Link} from "react-router-dom";
 
 const RecipeRow = (props) => {
-    const recipe_id = localStorage.getItem("recipe_id") 
-    const link = `/Recipe/${recipe_id}`;
+    // const recipe_id = localStorage.getItem("recipe_id") 
+    const link = `/Recipe/${props.id}`;
 
     const deleteRecipe = (event) => {
         event.preventDefault();
@@ -26,14 +26,12 @@ const RecipeRow = (props) => {
     }
 
     return(
-        <Link to={link} className='card_link'>
             <tr className='RecipeRow_tr' id={props.id}>
-                <td className='RecipeRow_td'>{props.name}</td>
+                <td className='RecipeRow_td'><Link to={link} className='calendar_link'>{props.name}</Link></td>
                 <td className='RecipeRow_td'>{props.cuisine}</td>
                 <td className='RecipeRow_td'>{props.date}</td>
                 <td className='RecipeRow_td'><DeleteIcon onClick={deleteRecipe}/> </td>
             </tr>
-        </Link>
         
     );
 }
