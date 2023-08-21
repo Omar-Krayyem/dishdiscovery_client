@@ -136,3 +136,9 @@
     background-color: red;
     transition: 0.5s;
 }
+
+.Recipe_Ingredients p{
+    width: 100%;
+    word-wrap: break-word;
+    white-space: pre-line;
+}
