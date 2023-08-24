@@ -1,11 +1,18 @@
 .authenticate {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row ;
     align-items: center;
     justify-content: center;
     margin: 150px 50px 100px 50px;
     padding: 0 400px;
   }
+  /* .authenticate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 50px 100px 50px;
+    padding: 0;
+  } */
   
   .auth__left {
     flex: 0.5;
@@ -13,6 +20,7 @@
   }
   
   .auth__right {
+    width: 400px;
     flex: 0.5;
   }
   
