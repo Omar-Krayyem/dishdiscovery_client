@@ -46,17 +46,9 @@ As User:
 
 | Landing Page  | Login | Signup |
 | ---| ---| ---|
-| ![Landing](./Readme/mockups/Landing_page.svg) | ![Login](./Readme/wireframes/Signin.svg) | ![Signup](./Readme/mockups/Signup.svg) |
+| ![Landing](./Readme/wireframes/signin.svg) | ![Login](./Readme/wireframes/Home.svg) | ![Signup](./Readme/wireframes/recipe.svg) |
 | Dashboard | Requests | Requests Form |
-| ![Dashboard](./Readme/mockups/Dashboard.svg) | ![Requests](./Readme/mockups/Request.svg) | ![Requests Form](./Readme/mockups/Request_Form.svg) |
-| Profile | Partners | Partners Form |
-| ![Profile](./Readme/mockups/Profile.svg) | ![Partners](./Readme/mockups/Partners.svg) | ![Partners Form ](./Readme/mockups/Partners_Form.svg) |
-| Workers | Workers Form | Stored Items |
-| ![Workers](./Readme/mockups/Workers.svg) | ![Workers Form](./Readme/mockups/Workers_Form.svg) | ![Stored Items](./Readme/mockups/Stored_Items.svg) |
-| Stored Items Form | Incoming Orders | Incoming Order Details |
-| ![Stored Items Form ](./Readme/mockups/Stored_Items_Form.svg) | ![Placed Orders](./Readme/mockups/Incoming.svg) | ![Placed Order](./Readme/mockups/Incoming_Detail.svg) |
-| Outgoing Orders | Incoming Order Details |
-| ![Shipment Orders](./Readme/mockups/Outgoing.svg) | ![Shipment Order](./Readme/mockups/Outgoing_Detail.svg) |
+| ![Dashboard](./Readme/wireframes/my_recipes.svg) | ![Requests](./Readme/wireframes/Shopping_items.svg) | ![Requests Form](./Readme/wireframes/Request_Form.svg) |
 
 
 <br><br>
