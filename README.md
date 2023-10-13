@@ -44,10 +44,10 @@ As User:
 
 >We designed Fatal Breath using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
-| Landing Page  | Login | Signup |
+| Auth Page  | Home page | recipe Page |
 | ---| ---| ---|
 | ![Landing](./Readme/wireframes/signin.svg) | ![Login](./Readme/wireframes/Home.svg) | ![Signup](./Readme/wireframes/recipe.svg) |
-| Dashboard | Requests | Requests Form |
+| My Recipes Page | Shopping List | Calendar Page |
 | ![Dashboard](./Readme/wireframes/my_recipes.svg) | ![Requests](./Readme/wireframes/Shopping_items.svg) | ![Requests Form](./Readme/wireframes/Request_Form.svg) |
 
 
