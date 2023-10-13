@@ -78,13 +78,13 @@ As User:
 ### Demo
 Using the wireframes and mockups as a guide, we implemented the Storage Park app with the following features:
 
-| Landing Page  | Tracking Order | Login |
+| Login | Signup | Home Page |
 | ---| ---| ---|
-| ![Landing](./Readme/demo/landing_page.gif) | ![Tracking Order](./Readme/demo/tracking_order.gif) | ![Login](./Readme/demo/login.gif) |
-| Registration | View Stock | Add New Order |
-| ![Registration](./Readme/demo/registration.gif) | ![Requests](./Readme/demo/view_stock.gif) | ![Add New Order](./Readme/demo/add_order.gif) |
-| Change Password |
-| ![Change Password](./Readme/demo/change_password.gif) |
+| ![Landing](./Readme/Demo/login.jpg) | ![Tracking Order](./Readme/Demo/signup.jpg) | ![Login](./Readme/Demo/home_page.jpg) |
+| Recipe | Add New Recipe | Add To Calendar |
+| ![Registration](./Readme/Demo/recipe.jpg) | ![Requests](./Readme/Demo/add_recipe.jpg) | ![Add New Order](./Readme/Demo/add_to_calendar.jpg) |
+| Shopping List | Calendar |
+| ![Change Password](./Readme/Demo/shopping-List.jpg) |  ![Change Password](./Readme/Demo/calendar.jpg) |
 <br><br>
 
 <img src="./Readme/title10.svg"/>
