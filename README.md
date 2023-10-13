@@ -8,7 +8,7 @@
 - [User Types](#user-types)
 - [User Stories](#User-Stories)
 - [Tech Stack](#Tech-stack)
-- [Prototyping](#prototyping)
+- [Prototyping](#Wireframes)
 - [Demo](#Demo)
 - [Backend](#Backend)
 - [Performance](#Performance)
@@ -40,7 +40,7 @@ As User:
 <img src="./Readme/title3.svg"/>
 <br><br>
 
-### Mockups 
+### Wireframes 
 
 >We designed Fatal Breath using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
