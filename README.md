@@ -48,7 +48,7 @@ As User:
 | ---| ---| ---|
 | ![Landing](./Readme/wireframes/signin.svg) | ![Login](./Readme/wireframes/Home.svg) | ![Signup](./Readme/wireframes/recipe.svg) |
 | My Recipes Page | Shopping List | Calendar Page |
-| ![Dashboard](./Readme/wireframes/my_recipes.svg) | ![Requests](./Readme/wireframes/Shopping_items.svg) | ![Requests Form](./Readme/wireframes/Request_Form.svg) |
+| ![Dashboard](./Readme/wireframes/my_recipes.svg) | ![Requests](./Readme/wireframes/Shopping_items.svg) | ![Requests Form](./Readme/wireframes/calender.svg) |
 
 
 <br><br>
