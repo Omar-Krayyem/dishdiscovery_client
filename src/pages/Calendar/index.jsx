@@ -26,6 +26,10 @@ const Calendar = () => {
           console.log(error);
         });
     };
+
+    const handleRecipeDeleted = (deletedRecipeId) => {
+        setRecipes(recipes.filter(recipe => recipe.id !== deletedRecipeId));
+    };
     
     useEffect(() => {
         getItems();
@@ -54,6 +58,7 @@ const Calendar = () => {
                                     name={recipe.recipe.name}
                                     cuisine={recipe.recipe.cuisine}
                                     date={recipe.date}
+                                    onRecipeDeleted={handleRecipeDeleted}
                                     />
                             ))}
                         </tbody>

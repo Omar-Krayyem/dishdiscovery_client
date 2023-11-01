@@ -1,11 +1,12 @@
 import '../RecipeRow/style.css';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const RecipeRow = (props) => {
-    // const recipe_id = localStorage.getItem("recipe_id") 
     const link = `/Recipe/${props.id}`;
+
+    const navigate = useNavigate();
 
     const deleteRecipe = (event) => {
         event.preventDefault();
@@ -18,7 +19,7 @@ const RecipeRow = (props) => {
         })
         .then(response => {
             console.log(response);
-            window.location.reload();
+            props.onRecipeDeleted(props.id);
         })
         .catch(error => {
             console.log(error);

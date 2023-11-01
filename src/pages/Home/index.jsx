@@ -38,7 +38,6 @@ const Home = () => {
       <div className="cardContainer">
         {cards.map((card) => (
          <Card id={card.id} name={card.name} new_image_url={card.new_image_url}/>
-        // <Card id={card.id} name={card.name} image_url={card.image_url}/>
         ))}
       </div>
       <div className='footer'><Footer/></div>
