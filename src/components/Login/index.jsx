@@ -1,12 +1,15 @@
 import '../Login/style.css';
 import React, { useState } from "react";
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
     const [errorMessage, setErrorMessage] = useState("");
+
+    const navigate = useNavigate();
 
     const submitForm = async(e) => {
         e.preventDefault()
@@ -15,12 +18,15 @@ const Login = () => {
 
         axios.post("http://127.0.0.1:8000/api/login", postData)
         .then(response => {
-            console.log(response.data);
             if(response.data.status === "success"){
-                let token = response.data.authorisation.token 
+                let token = response.data.authorisation.token;
+                let first_name = response.data.user.first_name;
+                let last_name = response.data.user.last_name;
+
                 localStorage.setItem("token", token);
-                console.log(localStorage.getItem("token"))
-                window.location.href = '/home';
+                localStorage.setItem("first_name", first_name);
+                localStorage.setItem("last_name", last_name);
+                navigate('/home');
             }
             else{
                 setErrorMessage("Wrong email or password");
