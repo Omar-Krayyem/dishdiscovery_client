@@ -29,10 +29,10 @@ function App() {
     <Routes>
         <Route path="/" element={<Auth/>} />
         <Route path="/home" element={islogged ?<Home/> : <Navigate to="/" />} />
-        <Route path="/MyRecipes" element={<MyRecipes/>} />
-        <Route path="/Calendar" element={<Calendar/>} />
-        <Route path="/ShoppingList" element={<ShoppingList/>} />
-        <Route path="/Recipe/:recipeId" element={<Recipe/>} />
+        <Route path="/MyRecipes" element={islogged ?<MyRecipes/> : <Navigate to="/" />}/>
+        <Route path="/Calendar" element={islogged ?<Calendar/> : <Navigate to="/" />}/>
+        <Route path="/ShoppingList" element={islogged ?<ShoppingList/> : <Navigate to="/" />}/>
+        <Route path="/Recipe/:recipeId" element={islogged ?<Recipe/> : <Navigate to="/" />}/>
     </Routes>
   );
 }
