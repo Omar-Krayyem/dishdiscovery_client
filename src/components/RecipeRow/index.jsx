@@ -1,12 +1,10 @@
 import '../RecipeRow/style.css';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const RecipeRow = (props) => {
     const link = `/Recipe/${props.id}`;
-
-    const navigate = useNavigate();
 
     const deleteRecipe = (event) => {
         event.preventDefault();

@@ -31,6 +31,14 @@ const ShoppingList = () => {
           console.log(error);
         });
     };
+
+    const handleItemsDeleted = (deletedItemId) => {
+        setItems(items.filter(item => item.id !== deletedItemId));
+    };
+
+    const handleItemAdded = (newItem) => {
+        setItems([...items, newItem]);
+    };
     
     useEffect(() => {
         getItems();
@@ -55,13 +63,13 @@ const ShoppingList = () => {
                         </thead>
                         <tbody>
                             {items.map((item) => (
-                                <ItemRow id={item.id} name={item.name} quantity={item.quantity}/>
+                                <ItemRow id={item.id} name={item.name} quantity={item.quantity} onItemDeleted={handleItemsDeleted}/>
                             ))}
                         </tbody>
                     </table>
                 </div>
             </div>
-            {isPopupVisible && <AddItem onClose={() => setPopupVisibility(false)} />}
+            {isPopupVisible && <AddItem onClose={() => setPopupVisibility(false)} onItemAdded={handleItemAdded} />}
             <div className='ShoppingList_bottom'><div className='footer'><Footer/></div></div>
         </div>
     );

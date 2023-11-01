@@ -16,7 +16,7 @@ const ItemRow = (props) => {
         })
         .then(response => {
             console.log(response.data.data);
-            window.location.reload();
+            props.onItemDeleted(props.id);
         })
         .catch(error => {
             console.log(error);
