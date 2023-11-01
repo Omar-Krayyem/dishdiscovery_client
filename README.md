@@ -1,70 +1,169 @@
-# Getting Started with Create React App
+<img src="./Readme/title1.svg"/>
+<br><br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br><br>
+<img src="./Readme/title7.svg"/>
+<br><br>
+- [Project Description](#project-description)
+- [User Types](#user-types)
+- [User Stories](#User-Stories)
+- [Prototyping](#Wireframes)
+- [Tech Stack](#Tech-stack)
+- [Demo](#Demo)
+- [Backend](#Backend)
+- [Performance](#Performance)
+- [How to Run](#How-to-run)
+ 
+  
+<br><br>
+<img src="./Readme/title2.svg"/>
+<br><br>
 
-## Available Scripts
+<a name="project-description"></a>
+> DishDiscovery is a comprehensive application designed to cater to the needs of food enthusiasts, home chefs, and meal planners. It's a platform where users can explore, share, and plan their culinary adventures. With a focus on user engagement and culinary delight, RecipeHub offers a wide range of features to enhance the cooking and meal planning experience.
+>
 
-In the project directory, you can run:
+### User Types 
+1. User
 
-### `npm start`
+### User Stories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+As User: 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- I want to explore a wide variety of recipes by name, cuisine, or ingredients.
+- I want to view recipe details, including ingredients and images.
+- I want to like, comment on, and share recipes on social media.
+- I want to search for recipes based on dietary preferences, such as vegetarian, gluten-free, or keto.
+- I want to create shopping lists based on the ingredients of recipes I choose.
 
-### `npm test`
+<br><br>
+<img src="./Readme/title3.svg"/>
+<br><br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Wireframes 
 
-### `npm run build`
+>We designed Fatal Breath using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Auth Page  | Home page | recipe Page |
+| ---| ---| ---|
+| ![Landing](./Readme/wireframes/signin.svg) | ![Login](./Readme/wireframes/Home.svg) | ![Signup](./Readme/wireframes/recipe.svg) |
+| My Recipes Page | Shopping List | Calendar Page |
+| ![Dashboard](./Readme/wireframes/my_recipes.svg) | ![Requests](./Readme/wireframes/Shopping_items.svg) | ![Requests Form](./Readme/wireframes/calender.svg) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br><br>
+<img src="./Readme/title5.svg"/>
+<br><br>
 
-### `npm run eject`
+### Tech-stack 
+###  Storage Park is built using the following technologies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- This project uses the [React Library](https://react.dev/) for the frontend development.
+- This project uses [Laravel](https://laravel.com/), a PHP web application framework. Laravel simplifies web development by providing robust tools and an expressive syntax for building secure and scalable web applications.
+- [MySQL](https://www.mysql.com/) for the database. It is an open-source relational database management system.
+- Storage Park includes hardware integration with an ESP8266 microchip connected to a GPS sensor to get location.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br><br>
+<img src="./Readme/title4.svg"/>
+<br><br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Demo
+Using the wireframes and mockups as a guide, we implemented the Storage Park app with the following features:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Login | Signup | Home Page |
+| ---| ---| ---|
+| ![Landing](./Readme/Demo/login.jpg) | ![Tracking Order](./Readme/Demo/signup.jpg) | ![Login](./Readme/Demo/home_page.jpg) |
+| Recipe | Add New Recipe | Add To Calendar |
+| ![Registration](./Readme/Demo/recipe.jpg) | ![Requests](./Readme/Demo/add_recipe.jpg) | ![Add New Order](./Readme/Demo/add_to_calendar.jpg) |
+| Shopping List | Calendar |
+| ![Change Password](./Readme/Demo/shopping-List.jpg) |  ![Change Password](./Readme/Demo/calendar.jpg) |
+<br><br>
 
-## Learn More
+<img src="./Readme/title10.svg"/>
+<br><br>
+### Backend
+[Backend Repository](https://github.com/Omar-Krayyem/dishdiscovery_server.git)
+<br><br>
+<a name="Performance" ></a>
+<img src="./Readme/title9.svg"/> 
+> The following tests were conducted in Postman to assess the functionality of my application's primary APIs
+<br><br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+URL: http://127.0.0.1:8000/api/MyRecipes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh 
+PASS: Response time is within acceptable range //199 ms
+PASS: Response content type is JSON
+PASS: Response schema is valid
+PASS: Response has the required field - message
+PASS: Response content type is JSON
 
-### Code Splitting
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
+URL: http://127.0.0.1:8000/api/recipe/10
 
-### Analyzing the Bundle Size
+```sh 
+PASS: Response time is within acceptable range //258 ms
+PASS: Response content type is JSON
+PASS: Response schema is valid
+PASS: Response has the required field - message
+PASS: Response content type is JSON
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br><br>
+<img src="./Readme/title6.svg"/>
+<br><br>
+### How-to-run
 
-### Making a Progressive Web App
+> To set up Storage Park locally, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Prerequisites
+- MySQL
+	1) Follow these instructions to setup MySQL: [MySQL Insrallation](https://www.w3schools.com/mysql/mysql_install_windows.asp)
 
-### Advanced Configuration
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1) Clone the frontend repo
 
-### Deployment
+   ```sh
+   git clone https://github.com/Omar-Krayyem/storage_park_client.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2) Clone the backend repo
 
-### `npm run build` fails to minify
+   ```sh
+   git clone https://github.com/Omar-Krayyem/storage_park_server.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3) Install Laravel dependencies by navigating to the Laravel project directory:
+
+   ```sh
+   cd laravel-backend
+   composer install
+   ```
+
+4) Set up your Laravel environment and configure the .env file with your database settings.
+
+   Run Laravel migrations to set up the database:
+
+   ```sh
+   php artisan migrate
+   ```
+
+5) Launch the server
+	- Navigate to the server repo
+	- Run this command	
+	```sh
+	php artisan serve
+	```
+
+6) Launch the frontend
+	- Navigate to the frontend repo
+	- Run this command	
+	```sh
+	npm start
+	```
+<br>
+
+Now, you should be able to run **Storage Park** locally and explore its features
