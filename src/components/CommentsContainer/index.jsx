@@ -6,16 +6,14 @@ import axios from 'axios';
 
 const CommentsContainer = () => {
     const [text, setText] = useState('');
-    const [comments, setComments] = useState([]); // State to store comments
+    const [comments, setComments] = useState([]);
 
     const recipe_id = localStorage.getItem("recipe_id");
     const token = localStorage.getItem("token");
-    // const first_name = "omar";
-    // const last_name = "kr";
 
     const first_name = localStorage.getItem("first_name");
     const last_name = localStorage.getItem("last_name");
-    
+
     const AddComment = () => {
         const postData = { text, recipe_id };
         axios.post('http://127.0.0.1:8000/api/comments/store', postData, {

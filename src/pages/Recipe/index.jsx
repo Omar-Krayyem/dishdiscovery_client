@@ -11,11 +11,13 @@ import CommentsContainer from '../../components/CommentsContainer/index';
 import AddCalendar from '../../components/AddCalendar/index';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Navigate , useNavigate } from 'react-router-dom';
 
 const Recipe = () => {
     const recipe_id = localStorage.getItem("recipe_id");
     const token = localStorage.getItem("token");
 
+    const navigate = useNavigate();
     ////////////////////////////////////Open add recipe form
     const [isPopupVisible, setPopupVisibility] = useState(false);
 
@@ -143,7 +145,7 @@ const Recipe = () => {
         })
         .then(response => {
             console.log(response.data);
-            window.location.href = '/MyRecipes';
+            navigate('/MyRecipes');
         })
         .catch(error => {
             console.log(error);
