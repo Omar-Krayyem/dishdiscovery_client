@@ -20,7 +20,7 @@ const Header = () => {
                 }
             });
             console.log(data.data);
-            setSearchedRecipes(data.data); // You need to define 'user'
+            setSearchedRecipes(data.data); 
             console.log(searchedRecipes);
         } catch (error) {
             console.log(error);
@@ -30,7 +30,7 @@ const Header = () => {
     if (searchInput !== "") {
       getRecipes();
     } else {
-      setSearchedRecipes([]); // Clear the search results when the input is empty
+      setSearchedRecipes([]); 
     }
   }, [searchInput]);
 
